@@ -1,5 +1,5 @@
-#ifndef SHELL_H
-#define SHELL_H
+#ifndef SIMPLESHELL-H
+#define SIMPLESHELL_H
 
 #define BUFSIZE 1024
 #define TOKEN_BUFSIZE 128
@@ -95,4 +95,4 @@ int _strcmp(const char *s1, const char *s2);
 char *_strcpy(char *dest, char *src);
 char *_strcat2(char *dest, char *src, char *s);
 char *shell_which(char *command);
-#endif /* SHELL_H */
+#endif 
