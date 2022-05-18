@@ -1,4 +1,4 @@
-#include "shell.h"
+#include "simpleShell.h"
 
 /**
  * replly - Read-Eval-Print-Loop for the shell
@@ -12,7 +12,7 @@ void replly(shell_t *shell)
 
 	do {
 		isLoop = 1;
-		prompt();
+		prompts();
 
 		cmd = readline(&chr);
 		if (chr == -1)

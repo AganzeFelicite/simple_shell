@@ -30,7 +30,7 @@ int shell_setenv(shell_t *shell)
 		write(STDERR_FILENO, "Input 3 arguments\n", 19);
 		return (0);
 	}
-	set_env(shell->argv[1], shell->argv[2]);
+	setEnv(shell->argv[1], shell->argv[2]);
 	return (0);
 }
 

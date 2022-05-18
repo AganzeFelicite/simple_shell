@@ -1,4 +1,4 @@
-#include "shell.h"
+#include "simpleShell.h"
 
 /**
  * main - Runs the shell

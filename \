@@ -58,7 +58,7 @@ int executes(shell_t *shell)
 	int sys;
 	char *file, **env = env_array();
 
-	file = shell_which(shell->argv[0]);
+	file = _which(shell->argv[0]);
 	if (!file)
 	{
 		write(STDERR_FILENO, "Enter a Valid Command\n", 23);
@@ -78,7 +78,7 @@ int executes(shell_t *shell)
 	else
 		wait(&sys);
 
-	free_arr(env);
+	free_env_arr(env);
 	free(file);
 	return (1);
 }

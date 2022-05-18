@@ -25,7 +25,7 @@ int _command(shell_t *shell, char *command)
 		flag = 1;
 
 	if (flag == 1)
-		flag = execute(shell);
+		flag = executes(shell);
 
 	free(shell->argv);
 	free(shell->command);
