@@ -1,21 +1,22 @@
-#include "simpleShell.h"
+#include "shell.h"
 
 
 /**
- * handlerFunction - gets appropriate handler for a supported
+ * get_builtin_handl - gets appropriate handler for a supported
  * builtin command
  *
  * @command: input command
  * Return: function pointer to the handler
  */
-int (*handlerFunction(const char *command))(shell_t *shell)
+int (*get_builtin_handl(const char *command))(shell_t *shell)
 {
 	unsigned int i;
 	builtin_t builtins[] = {
-		{"exit", shell_exit},
-		{"env", shell_env},
-		{"setenv", shell_setenv},
-		{"unsetenv", shell_unsetenv},
+		{"exit", hsh_exit},
+		{"env", hsh_env},
+		{"setenv", hsh_setenv},
+		{"unsetenv", hsh_unsetenv},
+		{"cd", hsh_cd},
 		{NULL, NULL}
 	};
 

@@ -1,4 +1,4 @@
-#include "simpleShell.h"
+#include "shell.h"
 
 /**
  * handl_signint - Handle Ctrl + c call in prompt.

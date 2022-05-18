@@ -1,13 +1,13 @@
-#include "simpleShell.h"
+#include "shell.h"
 
 static list_env *EnvVar;
 
 /**
- * manage- initializes or frees the environment list
+ * manage_env_list - initializes or frees the environment list
  *
  * @free_vars: If 1, free environment variables, otherwise initialize it.
  */
-void manage(int free_vars)
+void manage_env_list(int free_vars)
 {
 	list_env *head = NULL, *last_node = NULL, *new_node, *current;
 	char *token;
@@ -51,11 +51,11 @@ void manage(int free_vars)
 }
 
 /**
- * env_array - create environment array from list
+ * env_to_array - create environment array from list
  *
  * Return: pointer to a malloced string of env variables
  */
-char **env_array(void)
+char **env_to_array(void)
 {
 	list_env *node;
 	int n = 0, i = 0, j;
@@ -93,13 +93,13 @@ char **env_array(void)
 	return (env);
 }
 /**
- * setEnv - changes enviroment variable and
+ * set_env - changes enviroment variable and
  * adds variable to the end of the list
  *
  * @name: name of variable to add
  * @value: content of the variable
  */
-void setEnv(const char *name, const char *value)
+void set_env(const char *name, const char *value)
 {
 	list_env *new_node, *current, *tail;
 
@@ -134,14 +134,14 @@ void setEnv(const char *name, const char *value)
 }
 
 /**
- * _getEnv - get the address of environment variable
+ * _getenv - get the address of environment variable
  *
  * @name: value to check in the enviroment variable
  * @var: number passed in to unset env variable
  * Return: the address of environment variable or NULL if not there
  * or good if unset is successful and bad if not
  */
-char *_getEnv(const char *name, int var)
+char *_getenv(const char *name, int var)
 {
 	/* Declare variables to be used */
 	list_env *current, *previous;
@@ -179,12 +179,12 @@ char *_getEnv(const char *name, int var)
 }
 
 /**
- * shell_env - prints env variables (builtin)
+ * hsh_env - prints env variables (builtin)
  *
  * @shell: shell data
  * Return: 0 for success otherwise another integer
  */
-int shell_env(shell_t *shell)
+int hsh_env(shell_t *shell)
 {
 	list_env *current = EnvVar;
 	char *list;

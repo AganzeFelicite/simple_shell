@@ -1,13 +1,13 @@
-#include "simpleShell.h"
+#include "shell.h"
 
 
 /**
- * shell_which - find the file for a command
+ * _which - find the file for a command
  *
  * @command: command input
  * Return: 0 on failure otherwise 1
  */
-char *shell_which(char *command)
+char *_which(char *command)
 {
 	char *path, *path_dup, *spath, *file;
 	struct stat st;
@@ -47,12 +47,12 @@ char *shell_which(char *command)
 }
 
 /**
- * executes - executes a command
+ * execute - executes a command
  *
  * @shell: shell data
  * Return: 0 on success otherwise 1
  */
-int executes(shell_t *shell)
+int execute(shell_t *shell)
 {
 	pid_t pid;
 	int sys;
@@ -61,7 +61,7 @@ int executes(shell_t *shell)
 	file = _which(shell->argv[0]);
 	if (!file)
 	{
-		write(STDERR_FILENO, "Enter a Valid Command\n", 23);
+		error_message(shell);
 		return (1);
 	}
 

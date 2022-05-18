@@ -1,9 +1,9 @@
-#include "simpleShell.h"
+#include "shell.h"
 
 /**
- *  prompts - prints the prompt
+ *  prompt - prints the prompt
  */
-void prompts(void)
+void prompt(void)
 {
 	write(STDOUT_FILENO, "#cisfun$ ", 10);
 }
